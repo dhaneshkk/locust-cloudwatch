@@ -5,10 +5,10 @@ Description: AWS CloudFormation Template for launching a Locust load generator a
   log groups or log streams, since the CloudWatch Connector module creates them.
 Mappings:
   RegionMap:
-    us-east-1:
+    eu-west-2:
       #Find the latest image using: aws ec2 describe-images, for example:
       #aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn-ami-hvm-2018.03.0.20180811-x86_64-gp2" --region us-east-1
-      AMI: ami-00eb20669e0990cb4
+      AMI: ami-0e80a462ede03e653
 Outputs:
   LocustServerInstanceId:
     Description: The instance ID of the Locust server
@@ -159,13 +159,13 @@ Resources:
             - 'mkdir -p /home/ec2-user/locust
 
               '
-            - 'wget https://raw.githubusercontent.com/concurrencylabs/locust-cloudwatch/master/locustfile.py -O /home/ec2-user/locust/locustfile.py
+            - 'wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/locustfile.py -O /home/ec2-user/locust/locustfile.py
 
               '
-            - 'wget https://raw.githubusercontent.com/concurrencylabs/locust-cloudwatch/master/locust_cw.py -O /home/ec2-user/locust/locust_cw.py
+            - 'wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/locust_cw.py -O /home/ec2-user/locust/locust_cw.py
 
               '
-            - 'wget https://raw.githubusercontent.com/concurrencylabs/locust-cloudwatch/master/requirements.txt -O /home/ec2-user/locust/requirements.txt
+            - 'wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/requirements.txt -O /home/ec2-user/locust/requirements.txt
 
               '              
             - 'chown ec2-user:ec2-user /home/ec2-user/locust
