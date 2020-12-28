@@ -110,11 +110,11 @@ Resources:
               gcc-c++ : []
           commands:
             install_locust:
-              command: "sudo pip3 install locust"
+              command: "pip install locust"
             install_pyzmq:
-              command: "sudo pip3 install pyzmq"
+              command: "pip install pyzmq"
             install_boto3:
-              command: "sudo pip3 install boto3"
+              command: "pip install boto3"
       Comment: Install CloudFormation and Locust
     Properties:
       IamInstanceProfile:
@@ -156,28 +156,28 @@ Resources:
             - '# Get the sample Locust files
 
               '
-            - 'sudo mkdir -p /home/ec2-user/locust
+            - 'mkdir -p /home/ec2-user/locust
 
               '
-            - 'sudo wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/locustfile.py -O /home/ec2-user/locust/locustfile.py
+            - 'wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/locustfile.py -O /home/ec2-user/locust/locustfile.py
 
               '
-            - 'sudo wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/locust_cw.py -O /home/ec2-user/locust/locust_cw.py
+            - 'wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/locust_cw.py -O /home/ec2-user/locust/locust_cw.py
 
               '
-            - 'sudo wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/requirements.txt -O /home/ec2-user/locust/requirements.txt
+            - 'wget https://raw.githubusercontent.com/dhaneshkk/locust-cloudwatch/master/requirements.txt -O /home/ec2-user/locust/requirements.txt
 
               '              
-            - 'sudo chown ec2-user:ec2-user /home/ec2-user/locust
+            - 'chown ec2-user:ec2-user /home/ec2-user/locust
 
               '
-            - 'sudo chown ec2-user:ec2-user /home/ec2-user/locust/locustfile.py
+            - 'chown ec2-user:ec2-user /home/ec2-user/locust/locustfile.py
 
               '
-            - 'sudo chown ec2-user:ec2-user /home/ec2-user/locust/locust_cw.py
+            - 'chown ec2-user:ec2-user /home/ec2-user/locust/locust_cw.py
 
               '
-            - 'sudo chown ec2-user:ec2-user /home/ec2-user/locust/requirements.txt
+            - 'chown ec2-user:ec2-user /home/ec2-user/locust/requirements.txt
 
               '              
             - '/opt/aws/bin/cfn-signal -e $? '
